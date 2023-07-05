@@ -1,8 +1,8 @@
 resource "aws_cloudformation_stack" "default" {
-  count = module.this.enabled ? 1 : 0
+  count = module.context.enabled ? 1 : 0
 
-  name = module.this.id
-  tags = module.this.tags
+  name = module.context.id
+  tags = module.context.tags
 
   template_url = var.template_url
   parameters   = var.parameters

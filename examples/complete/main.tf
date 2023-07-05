@@ -8,5 +8,5 @@ module "cloudformation_stack" {
   parameters   = var.parameters
   capabilities = var.capabilities
 
-  context = module.this.context
+  context = module.context.self
 }
