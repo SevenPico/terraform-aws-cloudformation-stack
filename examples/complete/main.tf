@@ -1,6 +1,4 @@
-provider "aws" {
-  region = var.region
-}
+
 
 module "cloudformation_stack" {
   source       = "../../"
