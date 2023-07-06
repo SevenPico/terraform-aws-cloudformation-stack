@@ -3,8 +3,8 @@
 # ------------------------------------------------------------------------------
 resource "aws_cloudformation_stack" "default" {
   count = module.context.enabled ? 1 : 0
-  name = module.context.id
-  tags = module.context.tags
+  name  = module.context.id
+  tags  = module.context.tags
 
   capabilities       = var.capabilities
   notification_arns  = var.notification_arns

@@ -2,8 +2,8 @@
 # Cloudformation Stack
 # ------------------------------------------------------------------------------
 module "cloudformation_stack" {
-  source             = "../../"
-  context            = module.context.self
+  source  = "../../"
+  context = module.context.self
 
   notification_arns  = []
   on_failure         = ""
