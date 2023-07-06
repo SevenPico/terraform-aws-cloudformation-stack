@@ -1,12 +1,16 @@
-provider "aws" {
-  region = var.region
-}
-
+# ------------------------------------------------------------------------------
+# Cloudformation Stack
+# ------------------------------------------------------------------------------
 module "cloudformation_stack" {
-  source       = "../../"
-  template_url = var.template_url
-  parameters   = var.parameters
-  capabilities = var.capabilities
+  source  = "../../"
+  context = module.context.self
 
-  context = module.this.context
+  notification_arns  = []
+  on_failure         = ""
+  policy_body        = ""
+  template_body      = ""
+  timeout_in_minutes = 30
+  template_url       = var.template_url
+  parameters         = var.parameters
+  capabilities       = var.capabilities
 }

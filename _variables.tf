@@ -33,3 +33,13 @@ variable "policy_body" {
   description = "Structure containing the stack policy body"
 }
 
+variable "notification_arns" {
+  type    = list(string)
+  default = []
+}
+
+variable "template_body" {
+  type    = string
+  default = ""
+}
+
