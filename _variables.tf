@@ -30,7 +30,19 @@ variable "timeout_in_minutes" {
 variable "policy_body" {
   type        = string
   default     = ""
-  description = "Structure containing the stack policy body"
+  description = "Structure containing the stack policy body. Conflicts w/ policy_url."
+}
+
+variable "policy_url" {
+  type        = string
+  default     = ""
+  description = "Location of a file containing the stack policy. Conflicts w/ policy_body."
+}
+
+variable "iam_role_arn" {
+  type = string
+  default = ""
+  description = "The ARN of an IAM role that AWS CloudFormation assumes to create the stack. If you don't specify a value, AWS CloudFormation uses the role that was previously associated with the stack. If no role is available, AWS CloudFormation uses a temporary session that is generated from your user credentials."
 }
 
 variable "notification_arns" {
