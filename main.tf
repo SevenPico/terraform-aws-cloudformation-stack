@@ -19,6 +19,12 @@ resource "aws_cloudformation_stack" "default" {
   lifecycle {
     ignore_changes = [
       iam_role_arn,
+      parameters,
+      template_body,
+      template_url,
+      policy_body,
+      policy_url,
+
     ]
   }
 }
