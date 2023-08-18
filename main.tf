@@ -16,4 +16,9 @@ resource "aws_cloudformation_stack" "default" {
   template_body      = var.template_body
   template_url       = var.template_url
   timeout_in_minutes = var.timeout_in_minutes
+  lifecycle {
+    ignore_changes = [
+      iam_role_arn,
+    ]
+  }
 }
